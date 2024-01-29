@@ -1,0 +1,12 @@
+.Content {
+  max-width: 1024px;
+  height: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 40px;
+  transition: opacity 0.3s;
+
+  &_opacity {
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+}

@@ -1,0 +1,139 @@
+.TaskItem {
+  border-radius: 10px;
+  background: #fff;
+  padding: 20px;
+
+  &__head {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #e7eaee;
+  }
+
+  &__title {
+    width: 100%;
+    color: #696969;
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 12px;
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    transition: color 0.3s;
+
+    &:after {
+      content: "Начать работу";
+      display: block;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #808080;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: -25px;
+      opacity: 0;
+      transition: opacity 0.5s;
+      box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
+    }
+
+    &:hover {
+      color: #72c6c8;
+      transition: color 0.3s;
+
+      &:after {
+        opacity: 1;
+        transition: opacity 0.8s;
+        transition-delay: 0.5s;
+      }
+    }
+
+    &_dev {
+      &:after {
+        content: "Пометить выполненной";
+      }
+    }
+
+    &_completed {
+      color: rgba(22, 31, 62, 0.3);
+      text-decoration-line: line-through;
+
+      &:after {
+        content: "Вернуть в работу";
+      }
+
+      &:hover {
+        color: rgba(22, 31, 62, 0.3);
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__button {
+    position: relative;
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+    opacity: 1;
+    transition: opacity 0.3s;
+
+    &:after {
+      content: attr(data-title);
+      display: block;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #808080;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: -25px;
+      opacity: 0;
+      transition: opacity 0.5s;
+      box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+        transition: opacity 0.8s;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+
+  &__editIcon {
+    position: relative;
+    top: 1px;
+  }
+
+  &__text {
+    color: #808080;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0;
+    line-height: 1.5;
+  }
+
+  &__status {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #808080;
+    background-color: rgb(114, 198, 200, 0.2);
+    transition: opacity 0.5s;
+
+    &_done {
+      background-color: rgba(114, 200, 114, 0.3);
+    }
+
+    &_dev {
+      background-color: rgba(200, 114, 114, 0.2);
+    }
+  }
+}

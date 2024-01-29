@@ -1,0 +1,26 @@
+.EditTool {
+  width: auto;
+
+  &__button {
+    border-radius: 10px;
+    background: #f3f6f9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    opacity: 1;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &__text {
+    color: #808080;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
