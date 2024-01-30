@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path={""} element={<Main />} />
       </Routes>
-      {openModal !== null && <EditTask />}
+      {<EditTask isOpen={!!openModal} />}
     </>
   );
 }
