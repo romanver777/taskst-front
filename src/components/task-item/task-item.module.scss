@@ -19,50 +19,55 @@
     cursor: pointer;
     opacity: 1;
     transition: color 0.3s;
+    text-decoration: underline;
 
-    &:after {
-      content: "Начать работу";
-      display: block;
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 12px;
-      color: #808080;
-      background-color: white;
-      position: absolute;
-      left: 0;
-      top: -25px;
-      opacity: 0;
-      transition: opacity 0.5s;
-      box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
-    }
-
-    &:hover {
-      color: #72c6c8;
-      transition: color 0.3s;
-
+    @media not all and (hover: none) {
       &:after {
-        opacity: 1;
-        transition: opacity 0.8s;
-        transition-delay: 0.5s;
+        content: "Начать работу";
+        display: block;
+        border-radius: 8px;
+        padding: 5px 10px;
+        font-size: 12px;
+        color: #808080;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: -25px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
+        pointer-events: none;
+      }
+
+      &:hover {
+        color: #72c6c8;
+        transition: color 0.3s;
+
+        &:after {
+          opacity: 1;
+          transition: opacity 0.8s;
+          transition-delay: 0.5s;
+        }
+      }
+
+      &_dev {
+        &:after {
+          content: "Пометить выполненной";
+        }
       }
     }
-
-    &_dev {
-      &:after {
-        content: "Пометить выполненной";
-      }
-    }
-
     &_completed {
       color: rgba(22, 31, 62, 0.3);
       text-decoration-line: line-through;
 
-      &:after {
-        content: "Вернуть в работу";
-      }
+      @media not all and (hover: none) {
+        &:after {
+          content: "Вернуть в работу";
+        }
 
-      &:hover {
-        color: rgba(22, 31, 62, 0.3);
+        &:hover {
+          color: rgba(22, 31, 62, 0.3);
+        }
       }
     }
   }
@@ -80,27 +85,30 @@
     opacity: 1;
     transition: opacity 0.3s;
 
-    &:after {
-      content: attr(data-title);
-      display: block;
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 12px;
-      color: #808080;
-      background-color: white;
-      position: absolute;
-      left: 0;
-      top: -25px;
-      opacity: 0;
-      transition: opacity 0.5s;
-      box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
-    }
-
-    &:hover {
+    @media not all and (hover: none) {
       &:after {
-        opacity: 1;
-        transition: opacity 0.8s;
-        transition-delay: 0.5s;
+        content: attr(data-title);
+        display: block;
+        border-radius: 8px;
+        padding: 5px 10px;
+        font-size: 12px;
+        color: #808080;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: -25px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        box-shadow: rgba(128, 128, 128, 0.4) 0px 2px 8px 0px;
+        pointer-events: none;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+          transition: opacity 0.8s;
+          transition-delay: 0.5s;
+        }
       }
     }
   }

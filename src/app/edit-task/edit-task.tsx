@@ -6,7 +6,11 @@ import EditForm from "../../components/edit-form/edit-form";
 import type { TTask } from "../../components/task-item/task-item";
 import type { TForm } from "../../components/edit-form/edit-form";
 
-function EditTask() {
+type TEditTask = {
+  isOpen: boolean;
+}
+
+function EditTask({isOpen}: TEditTask) {
   const dispatch = useAppDispatch();
   const tasks = useAppSelector((state) => state.tasks.tasks);
   const openModalId = useAppSelector((state) => state.modal.modalId);
@@ -39,6 +43,7 @@ function EditTask() {
   return (
     <ModalLayout
       title={openModalId != null ? "Редактировать" : "Создать"}
+      isOpen={isOpen}
       onClose={onCloseModal}
     >
       <EditForm task={currentTask} onSave={onSaveTask} onClose={onCloseModal} />
