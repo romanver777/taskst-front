@@ -74,7 +74,7 @@ function Main() {
         ) : !loading ? (
           <Message text="Задач нет" />
         ) : (
-          <Message text="Ждем пока проснется сервер и загружаем.." />
+          <Message text="Загружаем.." />
         )}
         {error && <Message text="Что-то пошло не так" />}
       </Content>
