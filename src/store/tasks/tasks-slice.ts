@@ -6,7 +6,7 @@ export const loadTasks = createAsyncThunk(
   "tasks/loadTasks",
   async (_, thunkApi) => {
     try {
-      const resp = await fetch("https://taskst.onrender.com/api/tasks");
+      const resp = await fetch("https://taskst-3yzwbavm.b4a.run/api/tasks");
 
       if (!resp.ok) return thunkApi.rejectWithValue("Что-то пошло не так...");
 
@@ -21,7 +21,7 @@ export const createTask = createAsyncThunk(
   "tasks/createTask",
   async (data: TForm, thunkApi) => {
     try {
-      const resp = await fetch(`https://taskst.onrender.com/api/task`, {
+      const resp = await fetch(`https://taskst-3yzwbavm.b4a.run/api/task`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -44,7 +44,7 @@ export const patchTask = createAsyncThunk(
   async (data: TTask, thunkApi) => {
     const { _id, ...rest } = data;
     try {
-      const resp = await fetch(`https://taskst.onrender.com/api/task/${_id}`, {
+      const resp = await fetch(`https://taskst-3yzwbavm.b4a.run/api/task/${_id}`, {
         method: "PATCH",
         headers: {
           Accept: "application/json",
@@ -67,7 +67,7 @@ export const removeTaskById = createAsyncThunk(
   "tasks/removeTaskById",
   async (id: string, thunkApi) => {
     try {
-      const resp = await fetch(`https://taskst.onrender.com/api/task/${id}`, {
+      const resp = await fetch(`https://taskst-3yzwbavm.b4a.run/api/task/${id}`, {
         method: "DELETE",
       });
 
